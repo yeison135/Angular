@@ -1,0 +1,175 @@
+ <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav nav-pills nav-justified">
+          <li class="active"><a href="#">Restaurante el campo</a></li>
+          <li ><a href="#cliente">MODULO CliENTE</a></li>
+        </ul>
+            <div class="col-md-1 col-md-offset-11">
+       
+      </div>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+<form ng-submit="consultarCliente()">
+    <div class="bs-callout bs-callout-primary" ng-hide="">
+        <div class="row">
+                <div class="col-md-9 col-md-offset-9">
+              <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Otras opciones
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#login">Cerrar sesion</a></li>
+    <li><a href="#">Menu principal</a></li>
+    <li><a href="#">Quienes somos</a></li>
+  </ul>
+</div>
+                </div>
+            <div class="col-md-12">
+                <h1 class="page-header">Clientes</h1>
+                <h4>Consultar cliente</h4>                 
+                <hr>
+                <div class="form-group  col-md-6">
+                    <label>Nro.documento</label>
+                    <input class="form-control " ng-model="filtro.filtroDosId">
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group botonbusqueda">
+                        <button type="button" ng-click="reiniciar()" class="btn btn-default ng-binding">cancelar</button>
+                        <button type="submit" class="btn btn-info ng-binding">Consultar</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-success ng-binding" data-toggle="modal" data-target="#myModal">
+                Agregar cliente
+            </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+<div class="bs-callout bs-callout-primary" ng-show="!cliente" ng-hide="!variable">
+    <div class="row">
+        <div class="form-group labeldescripcion col-md-6">
+            <label>Nro.documento</label>
+            <input class="form-control labeldescripcion required" ng-model="cliente.cedula" readonly >
+        </div>
+        <div class="form-group labeldescripcion  col-md-6">
+            <label>Nombres y apellidos</label>
+            <input class="form-control labeldescripcion" ng-model="cliente.idPersonaCliente.nombre" readonly >
+        </div>
+        <div class="form-group labeldescripcion  col-md-6">
+            <label>Ciudad</label>
+            <input class="form-control labeldescripcion " ng-model="cliente.idPersonaCliente.ciudad" readonly >
+        </div>
+        <div class="form-group labeldescripcion  col-md-6">
+            <label>Teléfono</label>
+            <input class="form-control labeldescripcion " ng-model="cliente.idPersonaCliente.telefono" readonly >
+        </div>
+        <div class="form-group labeldescripcion col-md-6">
+            <label>Direccion</label>
+            <input class="form-control labeldescripcion " ng-model="cliente.idPersonaCliente.direccion" readonly >
+        </div>
+
+    </div>
+</div>
+<div class="bs-callout bs-callout-primary">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Clientes Registrados</h4>  
+            <hr>
+            <br>          
+        </div>
+        
+         
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped" ng-table="clientes">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Cédula</th>
+                            <th class="text-center">Ciudad</th>
+                            <th class="text-center">Télefono</th>
+                            <th class="text-center">direccion</th>
+                            <th class="text-center">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat="Cliente in clientes">
+                            <td class="text-center">{{Cliente.idPersonaCliente.nombre}}</td>
+                            <td class="text-center">{{Cliente.cedula}}</td>
+                            <td class="text-center">{{Cliente.idPersonaCliente.ciudad}}</td>
+                            <td class="text-center">{{Cliente.idPersonaCliente.telefono}}</td>
+                            <td class="text-center">{{Cliente.idPersonaCliente.direccion}}</td>
+                            <td class="text-center"><button type="button" class="btn btn-danger ng-binding" ng-click="eliminar(Cliente)">
+                Eliminar
+            </button></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="myModal" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                             </button>
+                <div class="bs-callout bs-callout-success">
+                    <div class="row">
+                        <h4>Agregar cliente</h4>
+
+                        <div class="modal-body">
+                            <div class="col-md-12">
+                                <div class="form-group  col-md-6">
+                                    <label>Cédula</label>
+                                    <input class="form-control " ng-model="persona.idPersona">
+                                </div>
+                                <div class="form-group  col-md-6">
+                                    <label>Nombres y apellidos</label>
+                                    <input class="form-control " ng-model="persona.nombre">
+                                </div>
+                                <div class="form-group  col-md-6">
+                                    <label>Ciudad</label>
+                                    <input class="form-control " ng-model="persona.ciudad">
+                                </div>
+                                <div class="form-group  col-md-6">
+                                    <label>Teléfono</label>
+                                    <input class="form-control " ng-model="persona.telefono">
+                                </div>
+                                <div class="form-group  col-md-6">
+                                    <label>Direccion</label>
+                                    <input class="form-control " ng-model="persona.direccion">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="reiniciar()">Close</button>
+                    <button type="button" class="btn btn-success" ng-click="agregarPersona()">registrar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>

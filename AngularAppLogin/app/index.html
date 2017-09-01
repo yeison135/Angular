@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>Control de inventario</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../bower_components/angular-growl-v2/build/angular-growl.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="../css/css/css.css" rel="stylesheet">
+</head>
+
+<body ng-app="app" ng-controller="AppController">
+
+  <!-- Fixed navbar --><!--
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav nav-pills nav-justified">
+          <li class="active"><a href="#">PcTecno S.A</a></li>
+          <li><a href="#cliente">Clientes</a></li>
+          <li><a href="#proveedor">Proveedores</a></li>
+          <li><a href="#venta">Ventas</a></li>
+          <li><a href="#equipos">Equipos</a></li>
+          <li><a href="#inventario">Inventario</a></li>
+        </ul>
+
+      </div>
+      <!/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container">
+    <div growl></div>
+    <div id="content" ng-view>
+
+    </div>
+
+  </div>
+  <!-- /container -->
+-->
+
+  <!-- jQuery -->
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-route/angular-route.min.js"></script>
+  <script src="../bower_components/angular-growl-v2/build/angular-growl.js"></script>
+  <!-- Mis controladores-->
+  <script src="scripts/app.js"></script>
+  <script src="components/standar/standar.js"></script>
+  <script src="components/equipos/equipos.js"></script>
+  <script src="components/proveedor/proveedor.js"></script>
+  <script src="components/directives/directives.js"></script>
+  <script src="components/venta/venta.js"></script>
+  <script src="components/inventario/inventario.js"></script>
+  <script src="components/cliente/cliente.js"></script>
+  <script src="../login/login.js"></script>
+  
+</body>
+
+</html>

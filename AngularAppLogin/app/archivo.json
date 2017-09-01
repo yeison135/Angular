@@ -1,0 +1,20 @@
+{
+    "respuesta":[{
+        "pqrEmail":"KAARRLLOZ@GMAIL.COM",
+        "pqrFecharadicacion":"06-06-2016",
+        "pqrId":1,
+        "pqrNombre":"CARLOS MARIO MARIN",
+        "pqrObservacion":"Primer PQR",
+        "pqrTelefono":"3007024652",
+        "tipodocideTdiId":"C",
+        "causalPqr":{
+            "cpqrDescripcion":"Calidad del servicio"
+            },
+        "tipoPqr":{
+            "tpqrDescripcion":"QUEJA"
+            }}],
+    "bytesReporte":null,
+    "tipoArchivo":null,
+    "mensajes":[],
+    "exception":false
+}

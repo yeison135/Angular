@@ -1,0 +1,95 @@
+ <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav nav-pills nav-justified">
+          <li class="active"><a href="#">PcTecno S.A</a></li>
+          <li><a href="#cliente">Clientes</a></li>
+          <li><a href="#proveedor">Proveedores</a></li>
+          <li><a href="#venta">Ventas</a></li>
+          <li><a href="#equipos">Equipos</a></li>
+          <li><a href="#inventario">Inventario</a></li>
+        </ul>
+
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+<div class="bs-callout bs-callout-default">
+  <h4>Default Callout</h4>
+  This is a default callout.
+</div>
+
+<div class="bs-callout bs-callout-primary">
+  <h4>Primary Callout</h4>
+  This is a primary callout.
+</div>
+
+<div class="bs-callout bs-callout-success">
+  <h4>Success Callout</h4>
+  This is a success callout.
+</div>
+
+<div class="bs-callout bs-callout-info">
+  <h4>Info Callout</h4>
+  This is an info callout.
+</div>
+
+<div class="bs-callout bs-callout-warning">
+  <h4>Warning Callout</h4>
+  This is a warning callout.
+</div>
+
+<div class="bs-callout bs-callout-danger">
+  <h4>Danger Callout</h4>
+  This is a danger callout.
+</div>
+
+  <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                Modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                             </button>
+                            <h4 class="modal-title" id="myModalLabel">Consultar cliente</h4>
+                        </div>
+                        <div class="modal-body">
+                         <div class="col-md-12">
+
+            <table class="table table-striped" ng-show="cliente" ng-hide="!cliente">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Cédula</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="Cliente in cliente">
+                        <td>{{Cliente.personaidPersona.nombre}}</td>
+                        <td>{{Cliente.cedula}}</td>
+                    </tr>
+                </tbody>
+            </table>
+                  </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="reiniciar()">Close</button>
+                            <button type="button" class="btn btn-primary" ng-click="consultar()">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>

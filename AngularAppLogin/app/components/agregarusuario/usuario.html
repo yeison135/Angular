@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Cambiar contraseña</h1>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        <h4>Ingrese el usuario y la contraseña a cambiar</h4>
+    </div>
+    <div class="col-md-8">
+
+        <form ng-submit="consultarUsuario()">
+
+            <!--
+        <div class="form-group  col-md-6">
+            <label>Numero de motor</label>
+            <input class="form-control " ng-model="carroguardar.carNromotor" numbers-only size="12">    control del campo utilizando una directiva 
+        </div>{{carro}}
+        <div class="form-group  col-md-6">
+            <label>Numero de serie</label>
+            <input class="form-control " ng-model="carroguardar.carNroserie" numbers-only size="10">    control del campo utilizando una directiva 
+        </div>
+        
+        <div class="form-group  col-md-6">
+            <label>Ingrese usuario</label>
+            <select class="form-control" ng-model="carroguardar.colorCol.colId">                      se traen los datos que estan en colId en la BD 
+            <option ng-repeat="car in tipo_color" value="{{car.colId}}"> {{car.colNombre}} </option>      para crear un menu desplegable
+            </select>
+        </div>
+        
+        <div class="form-group  col-md-6">
+            <label numbers-only size="10">Ingrese contraseña</label>
+            <select  class="form-control" ng-model="carroguardar.lineaLin.linId">
+            <option ng-repeat="carr in tipo_linea" value="{{carr.linId}}"> {{carr.linNombre}} </option>
+            </select>
+        </div>
+                  -->
+            <div class="form-group  col-md-6">
+                <label>id usuario</label>
+                <input class="form-control " ng-model="filtro.filtroId">
+                <!--control del campo utilizando
+            una directiva -->
+            </div>            
+            <div class="form-group  col-md-6">
+                <label> usuario</label>
+                <input class="form-control " ng-model="usuario.usuario">
+                <!--control del campo utilizando
+            una directiva -->
+            </div>
+            <div class="form-group  col-md-6">
+                <label>Nombre</label>
+                <input class="form-control " ng-model="usuario.nombreUsuario">
+                <!--control del campo utilizando
+            una directiva -->
+            </div>
+            <div class="col-md-12">
+                <div class="form-group botonbusqueda">
+                    <button type="button" class="btn btncancelar ng-binding" ng-click="reiniciar()">Cancelar</button>
+                    <button type="submit" class="btn btn-info ng-binding">Enviar</button>
+                </div>
+            </div>
+                        
+
+        </form>
+        <div class="bs-callout bs-callout-type2 row">
+            <div class="col-md-2">
+                <h4>Conceptos asociados</h4>
+            </div>
+            <div class="col-md-8">
+                <div class="table-responsive">
+                    <table class="table table-striped" ng-table="usuarios">
+                        <thead>
+                            <tr>
+                                <th>idusuario</th>
+                                <th>nombre usuario</th>
+                                <th>usuario</th>
+                                <th>contraseña</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr ng-repeat="usuario in $usuario">
+                                <td>{{usuario.idUsuario}}</td>
+                                <td>{{usuario.nombreUsuario}}</td>
+                                <td>{{usuario.usuario}}</td>
+                                <td>{{usuario.contrasena}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-md-12" ng-hide="agregacon">
+                        <div class="form-group botonbusqueda">
+                            <button type="button" class="btn btn-outline btn-success" data-toggle="modal" data-target="#adicionarTarifa">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

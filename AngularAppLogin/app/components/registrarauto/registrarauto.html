@@ -1,0 +1,79 @@
+ <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav nav-pills nav-justified">
+          <li class="active"><a href="#">PcTecno S.A</a></li>
+          <li><a href="#cliente">Clientes</a></li>
+          <li><a href="#proveedor">Proveedores</a></li>
+          <li><a href="#venta">Ventas</a></li>
+          <li><a href="#equipos">Equipos</a></li>
+          <li><a href="#inventario">Inventario</a></li>
+        </ul>
+
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Registro de Automoviles</h1>
+    </div>
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-2">
+        <h4>Seccion de ejemplo</h4>
+    </div>
+    <div class="col-md-8">
+        <form ng-submit="enviarcarro()">
+            <div class="form-group  col-md-6">
+                <label># de motor </label>
+                <input class="form-control " ng-model="carroguardar.carNromotor" numbers-only size="30">
+                <!-- guardar nombre en la variable de registro persona.js  -->
+            </div>
+
+            <div class="form-group  col-md-6">
+                <label>numero de serie</label>
+                <input class="form-control " ng-model="carroguardar.carNroserie" numbers-only size="5">
+                <!-- guardar nombre en la variable de registro persona.js  -->
+            </div>
+
+            <div class="form-group  col-md-6">
+                <label>color</label>
+
+                <select class="form-control" ng-model="carroguardar.colorCol.colId">
+                <option ng-repeat="tip in tipo_Color" value="{{tip.colId}}"> {{tip.colNombre}} </option> <!--lista de tipos de vehiculo-->
+        </select><br>
+            </div>
+
+            <div class="form-group  col-md-6">
+                <label>linea</label>
+                
+                 <select class="form-control" ng-model="carroguardar.lineaLin.linId">
+                  <option ng-repeat="tip in tipo_linea" value="{{tip.linId}}"> {{tip.linNombre}} </option><!-- recorra la la lista de elmentos en linea -->
+                <!-- guardar nombre en la variable de registro persona.js  -->
+                 </select>
+            </div>
+
+
+
+            <div class="col-md-12">
+                <div class="form-group botonbusqueda">
+                    <button type="button" class="btn btncancelar ng-binding" ng-click="reiniciar()">reiniciar</button>
+                    <button type="submit" class="btn btn-info ng-binding">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

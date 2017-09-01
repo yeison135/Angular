@@ -1,0 +1,13 @@
+{
+  "name": "app-angular",
+  "description": "ejemplo-angular",
+  "main": "main",
+  "keywords": [
+    "ejemplo"
+  ],
+  "authors": [
+    "cmarin"
+  ],
+  "license": "MIT",
+  "homepage": "index"
+}
