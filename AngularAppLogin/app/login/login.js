@@ -11,13 +11,15 @@ $scope.login={
 }
 
 $scope.logia= function(){
-
+    if ($scope.login.nombre != "" && $scope.login.cont != "" ){
+     
 if($scope.login.nombre=="cliente" && $scope.login.cont=="cliente"){
-
+   $scope.login.cont = "";
+    $scope.login.nombre = "";  
    window.location = ('#cliente');
-
 }else{
     growl.error("Clave incorrecta");
+    
 }
 if($scope.login.nombre=="venta" && $scope.login.cont=="venta"){
 
@@ -34,7 +36,7 @@ if($scope.login.nombre=="inventario" && $scope.login.cont=="proveedor"){
    window.location = ('#inventario');
 
 }
-
+    }
 
   var registrarPer = function(){
       $http({
