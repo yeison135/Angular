@@ -4,56 +4,33 @@ app.controller('loginController', ['$http', '$rootScope', '$scope','growl',
     function ($http, $rootScope, $scope, growl) {
 
 
+localStorage.clear();
 
 $scope.login={
-    nombre:'',
-    cont:''
+    filtroUno:'',
+    filtroDos:''
 }
 
 $scope.logia= function(){
-    if ($scope.login.nombre != "" && $scope.login.cont != "" ){
-     
-if($scope.login.nombre=="cliente" && $scope.login.cont=="cliente"){
-   $scope.login.cont = "";
-    $scope.login.nombre = "";  
-   window.location = ('#cliente');
-}else{
-    growl.error("Clave incorrecta");
-    
-}
-if($scope.login.nombre=="venta" && $scope.login.cont=="venta"){
-
-   window.location = ('#venta');
-
-}
-if($scope.login.nombre=="proveedor" && $scope.login.cont=="proveedor"){
-
-   window.location = ('#proveedor');
-
-}
-if($scope.login.nombre=="inventario" && $scope.login.cont=="proveedor"){
-
-   window.location = ('#inventario');
-
-}
-    }
-
-  var registrarPer = function(){
-      $http({
+    if ($scope.login.filtroUno != "" && $scope.login.filtroDos != ""){    
+       $http({
           method: 'POST',
-          url: 'http://localhost:8080/EasyParking/api/easyparking/RegistrarUsuario',
-          data: $scope.filtro
+          url: 'http://localhost:8080/Restaurante/api/restaurante/consultarUsuario',
+          data: $scope.login
       }).success(function (data) {
-          $scope.cliente = data;
-          growl.success("La consulta se realizo correctamente");
-          $scope.variable = true;
-          $scope.variable2 = true;
+          if(data==true){
+             window.location = ('#equipo');
+             growl.success("Bienvenido");
+          }else{
+             growl.error("Usuario o contraseña incorrecta !!!"); 
+          }                  
       }).error(function (data) {
-          $scope.variable2 = false;
+          growl.success("Error consultando el usuario !!!!");  
       });
-
-   } 
-
+    }else {
+        $scope.login.filtroUno = ''
+        $scope.login.filtroDos = ''
+    }
 }
 
 $('.message a').click(function(){

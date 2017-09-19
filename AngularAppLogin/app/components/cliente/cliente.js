@@ -3,6 +3,8 @@ var app = angular.module('app.cliente', []);
 app.controller('ClienteController', ['$http', '$rootScope', '$scope', 'growl',  // growl para los mensajes
     function ($http, $rootScope, $scope, growl) {
 
+        localStorage.clear();
+
         $scope.persona = {
             idPersona: '',
             nombre: '',

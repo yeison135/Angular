@@ -51,7 +51,7 @@ app.config(['$routeProvider',
             controller: 'loginController'
         }).
         otherwise({
-            redirectTo: '/login'
+            redirectTo: '/equipos'
         });
         
 
